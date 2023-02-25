@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../include/FaceDetector.hpp"
-#include "../include/EyesDetector.hpp"
+#include <detector_lib/FaceDetector.hpp>
+#include <detector_lib/EyesDetector.hpp>
 
 int main(int argc, char* argv[])
 {
