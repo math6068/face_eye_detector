@@ -1,4 +1,4 @@
-#include "../include/FaceDetector.hpp"
+#include <detector_lib/FaceDetector.hpp>
 
 FaceDetector::FaceDetector(std::string cascade_path) {
     // Load cascade classifier for face detection

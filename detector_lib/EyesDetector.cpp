@@ -1,4 +1,4 @@
-#include "../include/EyesDetector.hpp"
+#include <detector_lib/EyesDetector.hpp>
 
 EyeDetector::EyeDetector(std::string cascade_path) {
     if (!cascade_classier.load(cascade_path)) {
