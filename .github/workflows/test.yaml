@@ -3,23 +3,29 @@ on: [push]
 jobs:
   testing in docker container:
     runs-on: ubuntu-20.04
-    container:
-      image: opencvcourses/opencv-docker:latest
+    # container:
+    #   image: opencvcourses/opencv-docker:latest
     name: Test Project
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       
-      - name: install libs
-        run: bash .github/detector.sh
-
-      - name: test project building
+      - name: Build Docker Image
         run: |
-          cmake -S . -B build
-          cmake --build build
-
-      - name: detector tests
+          docker build -t test_detector .
+      - name: Run Tests in Container
         run: |
-          ./build/detector_test
+          docker run -v $PWD -w /workspaces/face_eyes_detectortest_detector /bin/bash -c "cmake -S . -B build && cmake --build build && ./build/detector_test"
+      # - name: install libs
+      #   run: bash .github/detector.sh
+
+      # - name: test project building
+      #   run: |
+      #     cmake -S . -B build
+      #     cmake --build build
+
+      # - name: detector tests
+      #   run: |
+      #     ./build/detector_test
