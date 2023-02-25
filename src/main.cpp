@@ -1,4 +1,4 @@
-#include "FaceDetector.hpp"
+#include "../include/FaceDetector.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -11,12 +11,12 @@ int main(int argc, char* argv[])
     }
 
     // Create a face detector
-    FaceDetector faceDetector("haarcascade_frontalface_alt.xml");
-
+    FaceDetector faceDetector("data/model_weight/haarcascade_frontalface_alt.xml");
+    std::cout << "here 1" << std::endl;
     // Detect faces in the input image
     std::vector<cv::Rect> faces;
     faceDetector.face_detect(img, faces);
-
+    std::cout << "here 2: " << faces.size() << std::endl;
     // Draw rectangles around the detected faces
     for (int i = 0; i < faces.size(); i++)
     {

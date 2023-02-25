@@ -1,4 +1,4 @@
-#include "FaceDetector.hpp"
+#include "../include/FaceDetector.hpp"
 
 FaceDetector::FaceDetector(const std::string& cascade_filepath)
 {

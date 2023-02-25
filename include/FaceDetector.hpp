@@ -9,5 +9,3 @@ public:
 private:
     cv::CascadeClassifier cascade_classier;
 };
-
-#endif
