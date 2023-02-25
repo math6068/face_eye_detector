@@ -24,8 +24,6 @@ if(NOT googletest_POPULATED)
 endif()
 
 
-
-
 # Set sources files
 set(DETECTOR_LIB
     detector_lib/FaceDetector.hpp
@@ -56,22 +54,7 @@ include_directories(".")
 add_library(detector_libs  ${DETECTOR_LIB})
 add_executable(${PROJECT_NAME} ${MAIN_FUNCTION} ${DETECTOR_LIB_HEADER})
 
-# add_executable(${PROJECT_NAME} ${FACE_DETECTOR_SOURCES} ${FACE_DETECTOR_HEADERS})
-# target_include_directories(DETECTOR_LIB ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} detector_libs ${OpenCV_LIBS})
 
-# add_library(face_eyes ${FACE_DETECTOR_SOURCES} ${FACE_DETECTOR_HEADERS})
-
 add_executable(detector_test ${TEST_SOURCES} )
-TARGET_LINK_LIBRARIES(detector_test gtest gtest_main detector_libs ${OpenCV_LIBS})
-# # # set up GTest
-# enable_testing()
-# add_executable(
-#   TestFaceDetector
-#   ${TEST_SOURCES}
-#   ${FACE_DETECTOR_SOURCES} 
-#   ${FACE_DETECTOR_HEADERS}
-# )
-# TARGET_LINK_LIBRARIES(TestFaceDetector gtest gtest_main ${OpenCV_LIBS})
-# include(GoogleTest)
-# gtest_discover_tests(TestFaceDetector)
+target_link_libraries(detector_test gtest gtest_main detector_libs ${OpenCV_LIBS})
