@@ -1,0 +1,25 @@
+name: Detector Test
+on: [push]
+jobs:
+  testing in docker container:
+    runs-on: ubuntu-20.04
+    container:
+      image: opencvcourses/opencv-docker:latest
+    name: Test Project
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action
+
+      - uses: actions/checkout@v3
+      
+      - name: install libs
+        run: bash .github/detector.sh
+
+      - name: test project building
+        run: |
+          cmake -S . -B build
+          cmake --build build
+
+      - name: detector tests
+        run: |
+          ./build/detector_test
