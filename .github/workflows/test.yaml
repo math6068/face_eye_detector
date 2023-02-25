@@ -3,8 +3,6 @@ on: [push]
 jobs:
   tests:
     runs-on: ubuntu-20.04
-    # container:
-    #   image: opencvcourses/opencv-docker:latest
     name: Test Project
     steps:
       - name: Cancel Previous Runs
@@ -17,15 +15,4 @@ jobs:
           docker build -t test_detector .
       - name: Run Tests in Container
         run: |
-          docker run -v $PWD -w /workspaces/face_eyes_detectortest_detector /bin/bash -c "cmake -S . -B build && cmake --build build && ./build/detector_test"
-      # - name: install libs
-      #   run: bash .github/detector.sh
-
-      # - name: test project building
-      #   run: |
-      #     cmake -S . -B build
-      #     cmake --build build
-
-      # - name: detector tests
-      #   run: |
-      #     ./build/detector_test
+          docker run -v $PWD:/workspaces/face_eyes_detector -w /workspaces/face_eyes_detector /bin/bash -c "cmake -S . -B build && cmake --build build && ./build/detector_test"
