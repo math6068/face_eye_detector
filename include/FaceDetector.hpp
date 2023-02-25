@@ -3,8 +3,8 @@
 class FaceDetector
 {
 public:
-    FaceDetector(const std::string& cascade_filepath);
-    void face_detect(const cv::Mat& input_image, std::vector<cv::Rect>& faces);
+    FaceDetector(std::string cascade_path);
+    std::vector<cv::Rect> face_detect(cv::Mat image);
 
 private:
     cv::CascadeClassifier cascade_classier;

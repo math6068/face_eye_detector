@@ -1,5 +1,5 @@
-# Face Detection using OpenCV C++
-This is a C++ project that uses the OpenCV library to detect faces in an image.
+# Face and Eyes Detection using OpenCV C++
+This is a C++ project that uses the OpenCV library to detect faces and eyes in an image.
 
 ## Dependencies
 * C++14 or higher
@@ -12,13 +12,15 @@ face_eyes_detector/
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
-├── build
 ├── data
 │   └── model_weight
+│       ├── eye.xml
 │       └── haarcascade_frontalface_alt.xml
 ├── include
+│   ├── EyesDetector.hpp
 │   └── FaceDetector.hpp
 ├── src
+│   ├── EyesDetector.cpp
 │   ├── FaceDetector.cpp
 │   └── main.cpp
 └── test
