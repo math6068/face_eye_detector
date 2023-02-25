@@ -23,11 +23,13 @@ include_directories(".")
 set(FACE_DETECTOR_SOURCES
     src/main.cpp
     src/FaceDetector.cpp
+    src/EyesDetector.cpp
 )
 
 # Set header files
 set(FACE_DETECTOR_HEADERS
     include/FaceDetector.hpp
+    include/EyesDetector.hpp
 )
 
 # Set test files
