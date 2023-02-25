@@ -48,6 +48,7 @@ set(MAIN_FUNCTION
 # Set test files
 set(TEST_SOURCES
     test/TestFaceDetector.cpp
+    test/TestEyesDetector.cpp
 )
 set(OpenCV_DIR /usr/local/opencv/share/OpenCV)
 
