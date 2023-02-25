@@ -7,23 +7,25 @@ This is a C++ project that uses the OpenCV library to detect faces and eyes in a
 
 ## Directory structure
 ```bash
-face_eyes_detector/
 ├── CMakeLists.txt
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
 ├── data
+│   ├── CelebA_sample_image
+│   │   └── sample_image.png
 │   └── model_weight
 │       ├── eye.xml
 │       └── haarcascade_frontalface_alt.xml
-├── include
-│   ├── EyesDetector.hpp
-│   └── FaceDetector.hpp
-├── src
-│   ├── EyesDetector.cpp
-│   ├── FaceDetector.cpp
+├── detect
 │   └── main.cpp
+├── detector_lib
+│   ├── EyesDetector.cpp
+│   ├── EyesDetector.hpp
+│   ├── FaceDetector.cpp
+│   └── FaceDetector.hpp
 └── test
+    ├── TestEyesDetector.cpp
     └── TestFaceDetector.cpp
 ```
 
