@@ -1,17 +1,26 @@
 {
-    "name": "OpenCV Face Detector",
-    "dockerFile": "../Dockerfile",
-    "extensions": [
-      "ms-vscode.cpptools",
-      "twxs.cmake",
-      "vector-of-bool.cmake-tools",
-      "ms-vscode.cmake-tools",
-      "vector-of-bool.cmake-tools-helper"
-    ],
-    "settings": {
-      "cmake.configureSettings": {
-        "OpenCV_DIR": "/usr/local/lib/cmake/opencv4"
-      }
+  // Name of the project
+  "name": "OpenCV Face Detector",
+
+  // Path to the Dockerfile that defines the environment for the project
+  "dockerFile": "../Dockerfile",
+
+  // List of extensions required for the project in Visual Studio Code
+  "extensions": [
+    "ms-vscode.cpptools", // C/C++ extension for VS Code
+    "twxs.cmake", // CMake extension for VS Code
+    "vector-of-bool.cmake-tools", // CMake Tools extension for VS Code
+    "ms-vscode.cmake-tools", // CMake Tools extension for VS Code
+    "vector-of-bool.cmake-tools-helper" // CMake Tools Helper extension for VS Code
+  ],
+
+  // Settings for CMake Tools extension in VS Code
+  "settings": {
+    "cmake.configureSettings": {
+      // Path to the OpenCV CMake configuration files
+      "OpenCV_DIR": "/usr/local/lib/cmake/opencv4"
     }
   }
+}
+
   

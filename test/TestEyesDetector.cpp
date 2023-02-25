@@ -19,6 +19,7 @@ TEST(EyesDetectionTest, DetectEyes)
 
     for (cv::Rect face : faces) {
         cv::Mat face_roi = img(face);
+        // Detect eyes
         std::vector<cv::Rect> eyes = eyesDetector.eyes_detect(face_roi);
         ASSERT_GT(eyes.size(), 1);
     }
