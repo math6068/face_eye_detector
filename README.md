@@ -2,7 +2,7 @@
 This is a C++ project that uses the OpenCV library to detect faces and eyes in an image.
 
 ## Dependencies
-* C++14 or higher
+* C++17 or higher
 * OpenCV 4.5.4 or higher
 
 ## Directory structure
